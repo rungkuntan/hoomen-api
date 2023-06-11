@@ -1,4 +1,4 @@
-const {validateRegister,validateLogin} = require('../validators/auth-validator')
+const {validateRegister,validateLogin, validateForm,} = require('../validators/auth-validator')
 const userService = require('../services/user-service')
 const createError = require('../utils/create-error')
 const bcryptService = require('../services/bcrypt-service')
@@ -50,4 +50,20 @@ exports.login = async(req,res,next) => {
   } catch (err) {
     next(err)
   }
+}
+
+
+exports.form = async (req,res,next) => {
+  try {
+  
+  const value =validateForm(req.body) 
+
+  const form = await userService.createForm(value)
+  const accessToken = tokenService.sign({id:form.id})
+  res.status(200).json({accessToken});
+  
+} catch (err) {
+  next(err)
+}
+
 }

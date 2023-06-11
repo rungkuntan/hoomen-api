@@ -23,10 +23,12 @@ module.exports = (sequelize,DataTypes) => {
                 notEmpty: true,
             }
         },
-        doctorName: {
-            type: DataTypes.STRING,
-        },
-
+        date: {
+            type: DataTypes.DATE,
+            validate: {
+                notEmpty: true,
+            }
+        }
        
 
     },
@@ -41,7 +43,6 @@ module.exports = (sequelize,DataTypes) => {
     Form.belongsTo(models.User, {
         foreignKey: {
           name:'userId',
-          allowNull: false
        
       },
       onDelete: 'RESTRICT'
@@ -56,6 +57,17 @@ module.exports = (sequelize,DataTypes) => {
       },
       onDelete: 'RESTRICT'
       })
+
+      Form.hasOne(models.Doctor, {
+        foreignKey: {
+          name:'doctorId',
+          allowNull: false
+       
+      },
+      onDelete: 'RESTRICT'
+      })
+
+
 
     }
 

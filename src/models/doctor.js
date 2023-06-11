@@ -1,7 +1,7 @@
 module.exports = (sequelize,DataTypes,) => {
-    const Services =  sequelize.define ("Services",{
+    const Doctor =  sequelize.define ("Doctor",{
         
-       itemsName : {
+       doctorName : {
             type: DataTypes.STRING,
             allowNull: false,
          
@@ -15,8 +15,8 @@ module.exports = (sequelize,DataTypes,) => {
     )
      
 
-    Services.associate =(models) => {
-        Services.hasOne(models.Form, {
+    Doctor.associate =(models) => {
+        Doctor.hasOne(models.Form, {
         foreignKey: {
           name:'formId',
     
@@ -28,5 +28,5 @@ module.exports = (sequelize,DataTypes,) => {
 
     }    
 
-    return Services 
+    return Doctor
 }

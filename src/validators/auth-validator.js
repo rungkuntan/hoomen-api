@@ -17,3 +17,18 @@ const loginSchema = Joi.object ({
 })
 
 exports.validateLogin = validate(loginSchema)
+
+
+
+
+const formSchema = Joi.object ({
+    firstName: Joi.string().trim().required(),
+    lastName: Joi.string().trim().required(),
+    petName: Joi.string().trim().required(),
+    doctorName: Joi.string().trim().required(),
+    date: Joi.date().required(),
+    
+
+})
+
+exports.validateForm = validate(formSchema)

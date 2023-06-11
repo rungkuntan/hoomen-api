@@ -12,3 +12,5 @@ exports.getUserByCheckUserExist = async (userName) => {
   const user = await userRepository.getUserByCheckUserExist(userName)
   return user
 }
+
+exports.createForm = form => userRepository.createForm(form)

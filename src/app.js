@@ -8,7 +8,7 @@ const authRoute = require('./routes/auth-route')
 const notFound = require('./middlewares/notfound')
 const errorMdw = require('./middlewares/error')
 const app = express();
-const db = require('./models')
+
 
 
 if (process.env.NODE_ENV === 'development') {
