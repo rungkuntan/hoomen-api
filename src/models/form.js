@@ -29,8 +29,7 @@ module.exports = (sequelize,DataTypes) => {
                 notEmpty: true,
             }
         }
-       
-
+        
     },
     {
         underscored: true
@@ -45,7 +44,7 @@ module.exports = (sequelize,DataTypes) => {
           name:'userId',
        
       },
-      onDelete: 'RESTRICT'
+      onDelete: 'CASCADE'
       })
 
      
@@ -55,7 +54,7 @@ module.exports = (sequelize,DataTypes) => {
           allowNull: false
        
       },
-      onDelete: 'RESTRICT'
+      onDelete: 'CASCADE'
       })
 
       Form.hasOne(models.Doctor, {
@@ -64,7 +63,7 @@ module.exports = (sequelize,DataTypes) => {
           allowNull: false
        
       },
-      onDelete: 'RESTRICT'
+      onDelete: 'CASCADE'
       })
 
 

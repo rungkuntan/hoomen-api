@@ -29,6 +29,6 @@ const formSchema = Joi.object ({
     date: Joi.date().required(),
     
 
-})
+}).options({allowUnknown:true})
 
 exports.validateForm = validate(formSchema)

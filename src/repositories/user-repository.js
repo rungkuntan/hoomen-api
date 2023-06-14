@@ -10,4 +10,10 @@ exports.getUserByCheckUserExist =  userName => {
      return User.findOne({where: {userName:userName}})
 }
 
-exports.createForm = form => Form.create(form)
+exports.createForm = form => Form.create(form);
+
+exports.getUserById = id => User.findByPk(id);
+
+exports.deleteFormByUserId =  async id => {
+     return Form.destroy({where:{id:id}})
+}

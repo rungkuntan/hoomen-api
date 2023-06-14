@@ -14,3 +14,6 @@ exports.getUserByCheckUserExist = async (userName) => {
 }
 
 exports.createForm = form => userRepository.createForm(form)
+
+exports.getUserById = id => userRepository.getUserById(id)
+exports.deleteFormByUserId = id =>userRepository.deleteFormByUserId(id)
